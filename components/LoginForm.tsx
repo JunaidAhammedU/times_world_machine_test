@@ -5,9 +5,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { LoginFormValues, loginSchema } from "@/lib/validation";
 import { FaFacebook, FaGoogle, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { login } from "@/store/slices/authSlice";
 
 export default function LoginForm() {
     const router = useRouter();
+    const dispatch = useDispatch();
 
     const {
         register,
@@ -18,7 +21,13 @@ export default function LoginForm() {
     });
 
     const onSubmit = (data: LoginFormValues) => {
-        console.log(data)
+        dispatch(
+            login({
+                email: data.email,
+                password: data.password,
+            })
+        );
+
         router.push("/home");
     };
 

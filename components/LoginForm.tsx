@@ -93,7 +93,7 @@ export default function LoginForm() {
                 Sign In
             </button>
             <div>
-                <p className="text-xs text-center">Don't have an account? <span className="text-xs text-green-900">Sign Up</span></p>
+                <p className="text-xs text-center">Don&apos;t have an account? <span className="text-xs text-green-900">Sign Up</span></p>
             </div>
         </form>
     );

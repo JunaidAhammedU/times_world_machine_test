@@ -1,4 +1,4 @@
-export async function getCountries(limit?:number) {
+export async function getCountries(limit?: number) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/countries?fields=name,flags,region&limit=${limit}&offset=0`,
     {
